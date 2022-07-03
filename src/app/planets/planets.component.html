@@ -1,0 +1,39 @@
+<div>
+    <div *ngIf="resp">
+        <h3>{{resp.name}}</h3>
+      <ul>
+            <li>climate:{{resp.climate}}</li>
+            <li>created: {{resp.created}}</li>
+            <li>diameter:{{resp.diameter}}</li>
+            <li>edited: {{resp.edited}}</li>
+            <li>gravity:{{resp.gravity}}</li>
+            <li>population: {{resp.population}}</li>
+            <li>orbital_period:{{resp.orbital_period}}</li>
+            <li>terrain: {{resp.terrain}}</li>
+      </ul>
+      </div>
+
+     
+      <h4>Persons</h4>
+ 
+      <button (click)="showArray=showAll(persons)">All</button>
+      <button (click)="showArray=showMale(persons)">Male</button>
+      <button (click)="showArray=showFemale(persons)">Female</button>
+      <div *ngIf="showArray.length!=0">
+            <div>
+            
+              <div *ngFor="let person of showArray">
+                
+                <div  (click)="goToPerson(person.url.split('/')[person.url.split('/').length-2])"
+                style="border:2px solid green;border-radius:10px;margin:10px;padding:5px;">
+                    <h3>name of hero :{{person.name}}</h3><p>birth year :{{person.birth_year}}</p><p>color of eyes :{{person.eye_color}}</p>
+               <p>{{person.url}}</p>
+               <p>{{person.gender}}</p>
+
+                </div>   
+            </div>
+        </div>
+        </div>
+       
+          
+        

@@ -1,0 +1,18 @@
+<div>
+<h1>Angola from swapi</h1>
+<div *ngIf="result">
+  <div>
+    <div *ngFor="let page of result">
+    <div *ngFor="let item of page.results">
+      <div (click)="goToPlanet(item.url.split('/')[item.url.split('/').length-2])" 
+      style="border:2px solid green;border-radius:10px;margin:10px;padding:5px;">
+        <h3>{{item.name}}</h3>
+        <p>diameter:{{item.diameter}}</p>
+        <p>population: {{item.population}}</p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+</div>
